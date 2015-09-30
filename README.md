@@ -1,5 +1,5 @@
 ## SSSegmentedControl
-`SSSegmentedControl` is an `UISegmentedControl` 'Extension' written in Objective-C. With this 'Extension' multiple segment selection is easy to use. 
+`SSSegmentedControl` is an `UISegmentedControl` 'Extension' written in Objective-C. With this 'Extension' multiple segment selection is available. 
 ___
 ### Features:
 * Easy to color active / selected segments
@@ -22,52 +22,18 @@ ___
 * Open the `ViewController.h` and connect an Outlet and IBAction to the `SSSegmentedControl`
 * Open the `ViewController.m` and add in `viewDidLoad()`:
 ```
-    _sssegmentedControl.segmentSelected = [NSMutableArray new];
-    [_sssegmentedControl.segmentSelected addObjectsFromArray:@[@NO,@NO,...]];
-    // add @NO for each Segment you have
-    _sssegmentedControl.maxActiveSegments = 2;
-    // Declare the maximum number of active segments
-    _sssegmentedControl.activeSegments = [NSMutableArray new];
-    [_sssegmentedControl.activeSegments addObjectsFromArray:@[@0]];
+[_segmentedControl setupSSSegmentedControlWithNumberOfSegments:'Number of Segments' withMaxActiveSegments:'Max Active Segments' andWithActiveColor:'Color'];
 ```
-* In `IBAction` add:
+* In the `IBAction` add:
 ```
-    NSInteger actSegments = [_sssegmentedControl getObjectFromSegmentArrayIndex:0];
-    if (sender.selectedSegmentIndex == UISegmentedControlNoSegment) {
-        return;
-    
-    if (! [_sssegmentedControl getSegmentSelectedForIndex:sender.selectedSegmentIndex]) {
-        if (! (actSegments < _sssegmentedControl.maxActiveSegments)) {
-            [sender setSelectedSegmentIndex:UISegmentedControlNoSegment];
-            [_sssegmentedControl colorAllSegmentsFor:sender withColor:[UIColor blueColor]];
-            return;
-        }
-        
-        [_sssegmentedControl setSegmentSelected:YES forIndex:sender.selectedSegmentIndex];
-        [_sssegmentedControl setTintColorFor:sender ofSegment:sender.selectedSegmentIndex
-                                 withColor:[UIColor blueColor]];
-        actSegments++;
-        [_sssegmentedContro insertObjectIntoSegmentArray:actSegments toIndex:0];
-        
-        // Methods to call if segment gets selected
-        
-    } else {
-        [_sssegmentedControl setSegmentSelected:NO forIndex:sender.selectedSegmentIndex];
-        [_sssegmentedControl setTintColorFor:sender ofSegment:sender.selectedSegmentIndex
-                                 withColor:sender.tintColor];
-        actSegments--;
-        [_sssegmentedControl insertObjectIntoSegmentArray:actSegments toIndex:0];
-        [sender setSelectedSegmentIndex:UISegmentedControlNoSegment];
-        
-        // Methods to call if segment gets deselected
-    }
-
-    [_sssegmentedControl2Tabs colorAllSegmentsFor:sender withColor:[UIColor blueColor]];
+[_segmentedControl segmentedControlActionWithSelectedSegmentAction:@selector('Method for selected segment':) andDeselectedAction:@selector('Method for deselected segment':) andTarget:self];
 ```
-* You are ready to use `SSSegmentedControl`
+* At last define an Method / Function for selected segment and deselected segment and connect them above with the selectors.
+* Pay attention! : -(void)methodNameForSelected/DeselectedSegment:(SSSegmentedControl*)sender !
 
 ___
 ### Questions / Suggestions ?
+* Check out the Demo Project for documented methods !
 * Feel free to message me at:
  benedikt.veith@scherer-software.de
     

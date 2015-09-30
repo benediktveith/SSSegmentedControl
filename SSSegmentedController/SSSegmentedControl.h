@@ -12,9 +12,29 @@
 
 @property NSArray *sortedSubViews;
 
-@property NSMutableArray *activeSegments;
+@property NSInteger activeSegments;
 @property NSMutableArray *segmentSelected;
 @property NSInteger maxActiveSegments;
+
+/**
+ *  Colors, Select and Deselect segment, also calls method for selected / deselected segment
+ *
+ *  @param segmentSelectedAction   Method for selected segment
+ *  @param segmentDeselectedAction Method for deselected segment
+ *  @param target                  Target which contains the methods
+ */
+- (void)segmentedControlActionWithSelectedSegmentAction:(SEL)segmentSelectedAction
+                                    andDeselectedAction:(SEL)segmentDeselectedAction andTarget:(id)target;
+
+/**
+ *  Setup SSSegmentedControl
+ *
+ *  @param numberOfSegments Number of Segments (Must be correct!)
+ *  @param maxActSegments   Max. allowed active segments
+ *  @param newColor         Color of active segments
+ */
+- (void)setupSSSegmentedControlWithNumberOfSegments:(NSInteger)numberOfSegments
+                              withMaxActiveSegments:(NSInteger)maxActSegments andWithActiveColor:(UIColor*)newColor;
 
 /**
  *  Insert active segments amount
@@ -22,7 +42,7 @@
  *  @param segment Active segment amount
  *  @param index   Index position
  */
-- (void)insertObjectIntoSegmentArray:(NSInteger)segment toIndex:(NSInteger)index;
+- (void)insertObjectIntoActiveSegments:(NSInteger)segment;
 
 /**
  * Get active segments
@@ -31,7 +51,7 @@
  *
  *  @return Active segments
  */
-- (NSInteger)getObjectFromSegmentArrayIndex:(NSInteger)index;
+- (NSInteger)getActiveSegmentsNumber;
 
 /**
  *  Colors segment to newColor
