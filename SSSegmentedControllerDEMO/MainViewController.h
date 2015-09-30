@@ -2,8 +2,8 @@
 //  MainViewController.h
 //  SSSegmentedController
 //
-//  Created by Benedikt Veith on 23/09/15.
-//  Copyright © 2015 Benedikt Veith. All rights reserved.
+//  Created by Scherer Software on 23/09/15.
+//  Copyright © 2015 Scherer Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

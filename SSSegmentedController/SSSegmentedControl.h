@@ -1,9 +1,9 @@
 //
-//  BOSearchSegmentedControl.h
-//  bo-ipad
+//  SSSegmentedControl.h
+//  SSSegmentedController
 //
-//  Created by Benedikt Veith on 21/09/15.
-//  Copyright © 2015 codekanzlei. All rights reserved.
+//  Created by Scherer Software on 21/09/15.
+//  Copyright © 2015 Scherer Software. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
