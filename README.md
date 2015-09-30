@@ -29,7 +29,7 @@ ___
 [_segmentedControl segmentedControlActionWithSelectedSegmentAction:@selector('Method for selected segment':) andDeselectedAction:@selector('Method for deselected segment':) andTarget:self];
 ```
 * At last define an Method / Function for selected segment and deselected segment and connect them above with the selectors.
-* Pay attention! : -(void)methodNameForSelected/DeselectedSegment:(SSSegmentedControl*)sender !
+* Pay attention! : ```-(void)methodNameForSelected/DeselectedSegment:(SSSegmentedControl*)sender ```!
 
 ___
 ### Questions / Suggestions ?
