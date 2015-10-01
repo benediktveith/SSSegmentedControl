@@ -20,4 +20,9 @@
 - (IBAction)segmentControl1Tab:(SSSegmentedControl *)sender;
 @property (weak, nonatomic) IBOutlet SSSegmentedControl *segmentControl1Tab;
 
+- (IBAction)segmentedControlIcons:(SSSegmentedControl *)sender;
+@property (weak, nonatomic) IBOutlet SSSegmentedControl *segmentedControlIcon;
+
+
+
 @end

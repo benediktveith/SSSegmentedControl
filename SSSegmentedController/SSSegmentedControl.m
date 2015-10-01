@@ -60,10 +60,15 @@
         return;
     }
     
+    if (_maxActiveSegments == 0) {
+        [self colorAllSegmentsFor:self withColor:_activeSegmentColor];
+        return;
+    }
+    
     // If selected segment segmentSelected value is NO
     if (! [self getSegmentSelectedForIndex:self.selectedSegmentIndex]) {
         // if actSegments is not less than maxActiveSegments
-        if (! (actSegments < self.maxActiveSegments)) {
+        if (! (actSegments < _maxActiveSegments)) {
             // Select no segment
             [self setSelectedSegmentIndex:UISegmentedControlNoSegment];
             // Color all segments
@@ -107,7 +112,7 @@
     }
     
     // Color all segments
-    [self colorAllSegmentsFor:self withColor:[UIColor blueColor]];
+    [self colorAllSegmentsFor:self withColor:_activeSegmentColor];
 }
 
 #pragma mark - Order SubViews
@@ -145,6 +150,17 @@ NSInteger static sortViewsByOrigin(id sp1, id sp2, void *context) {
 #pragma mark - Color Segments
 
 - (void)colorAllSegmentsFor:(UISegmentedControl*)sender withColor:(UIColor*)newColor {
+    if (_maxActiveSegments == 0) {
+        for (NSInteger index = 0; index < sender.numberOfSegments; index++) {
+            if (index == sender.selectedSegmentIndex) {
+                [self setTintColorFor:self ofSegment:index withColor:newColor];
+            } else {
+                [self resetColorsFor:sender ofSegment:index];
+            }
+        }
+        return;
+    }
+    
     for (NSInteger index = 0; index < _segmentSelected.count; index++) {
         if (! (index == sender.selectedSegmentIndex)) {
             if ([self getSegmentSelectedForIndex:index]) {
@@ -176,7 +192,7 @@ NSInteger static sortViewsByOrigin(id sp1, id sp2, void *context) {
     [sender.subviews objectAtIndex:index].tintColor = newColor;
 }
 
-#pragma mark - Check SegmentArrays
+#pragma mark - Check Segment
 
 - (BOOL)getSegmentSelectedForIndex:(NSInteger)index {
     return [[_segmentSelected objectAtIndex:index] boolValue];
@@ -186,7 +202,15 @@ NSInteger static sortViewsByOrigin(id sp1, id sp2, void *context) {
     return _activeSegments;
 }
 
-#pragma mark - Update SegmentArrayIndex
+- (UIColor*)getSegmentColor {
+    return _activeSegmentColor;
+}
+
+#pragma mark - Update Segment
+
+- (void)setNewColorForSegment:(UIColor*)newColor {
+    _activeSegmentColor = newColor;
+}
 
 - (void)setSegmentSelected:(BOOL)selected forIndex:(NSInteger)index {
     [_segmentSelected replaceObjectAtIndex:index withObject:[NSNumber numberWithBool:selected]];

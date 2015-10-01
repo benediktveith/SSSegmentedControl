@@ -104,4 +104,18 @@
  */
 - (void)colorAllSegmentsFor:(UISegmentedControl*)sender withColor:(UIColor*)newColor;
 
+/**
+ *  Set new color for selected segment
+ *
+ *  @param newColor New color
+ */
+- (void)setNewColorForSegment:(UIColor*)newColor;
+
+/**
+ *  Get selected segment color
+ *
+ *  @return Segment color
+ */
+- (UIColor*)getSegmentColor;
+
 @end

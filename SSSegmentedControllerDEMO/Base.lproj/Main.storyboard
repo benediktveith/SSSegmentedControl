@@ -33,13 +33,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segmented Control Example, All Tabs possible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gp-Hn-phZ">
-                                <rect key="frame" x="123" y="244" width="355" height="21"/>
+                                <rect key="frame" x="123" y="243" width="355" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="q1c-Ev-gOW" customClass="SSSegmentedControl">
-                                <rect key="frame" x="173" y="381" width="254" height="29"/>
+                                <rect key="frame" x="173" y="380" width="254" height="29"/>
                                 <segments>
                                     <segment title="One"/>
                                     <segment title="Two"/>
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="3ar-ik-2cq" customClass="SSSegmentedControl">
-                                <rect key="frame" x="193" y="165" width="215" height="29"/>
+                                <rect key="frame" x="193" y="164" width="215" height="29"/>
                                 <segments>
                                     <segment title="Red"/>
                                     <segment title="Blue"/>
@@ -77,18 +77,40 @@
                                     <action selector="segmentControl1Tab:" destination="BIf-cT-bYO" eventType="valueChanged" id="jBI-mH-f7N"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="c99-5K-7iM" customClass="SSSegmentedControl">
+                                <rect key="frame" x="227" y="471" width="149" height="29"/>
+                                <segments>
+                                    <segment title="" image="Icon"/>
+                                    <segment title="" image="Icon2"/>
+                                    <segment title="" image="Icon3"/>
+                                </segments>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentedControlIcons:" destination="BIf-cT-bYO" eventType="valueChanged" id="g10-Y8-rFq"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segmented Control Image Example" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A6-x5-j86">
+                                <rect key="frame" x="165" y="433" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0A6-x5-j86" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="5Je-P7-qzh"/>
                             <constraint firstItem="JGJ-mU-DnO" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="7dR-Kg-dEJ"/>
                             <constraint firstItem="2gp-Hn-phZ" firstAttribute="top" secondItem="3ar-ik-2cq" secondAttribute="bottom" constant="51" id="9en-Cn-iTq"/>
                             <constraint firstItem="LLw-5V-a64" firstAttribute="top" secondItem="2gp-Hn-phZ" secondAttribute="bottom" constant="8" id="9f7-vI-V9W"/>
+                            <constraint firstItem="0A6-x5-j86" firstAttribute="top" secondItem="q1c-Ev-gOW" secondAttribute="bottom" constant="25" id="BYS-uy-lvc"/>
                             <constraint firstItem="GGw-Ow-4dC" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="Fuh-P0-g0z"/>
                             <constraint firstItem="GGw-Ow-4dC" firstAttribute="top" secondItem="LLw-5V-a64" secondAttribute="bottom" constant="52" id="M5z-SV-QY0"/>
                             <constraint firstItem="JGJ-mU-DnO" firstAttribute="top" secondItem="0JH-mr-e5W" secondAttribute="bottom" constant="72" id="Nm9-oL-AYd"/>
+                            <constraint firstItem="c99-5K-7iM" firstAttribute="top" secondItem="0A6-x5-j86" secondAttribute="bottom" constant="17" id="P3e-tS-Z0s"/>
                             <constraint firstItem="LLw-5V-a64" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="QgE-zI-PUg"/>
                             <constraint firstItem="2gp-Hn-phZ" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="Yd4-ft-9sW"/>
                             <constraint firstItem="3ar-ik-2cq" firstAttribute="top" secondItem="JGJ-mU-DnO" secondAttribute="bottom" constant="8" id="d2e-QG-MeO"/>
+                            <constraint firstItem="c99-5K-7iM" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" constant="1" id="ll1-a5-NUA"/>
                             <constraint firstItem="q1c-Ev-gOW" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="qVn-wz-yWP"/>
                             <constraint firstItem="q1c-Ev-gOW" firstAttribute="top" secondItem="GGw-Ow-4dC" secondAttribute="bottom" constant="8" id="uOL-f5-IiB"/>
                             <constraint firstItem="3ar-ik-2cq" firstAttribute="centerX" secondItem="is1-hd-8Tx" secondAttribute="centerX" id="xMu-7E-JoR"/>
@@ -99,6 +121,7 @@
                         <outlet property="segmentControl1Tab" destination="3ar-ik-2cq" id="UWX-Ga-3Oh"/>
                         <outlet property="segmentedControl" destination="LLw-5V-a64" id="GZQ-sv-jQD"/>
                         <outlet property="segmentedControl2Tabs" destination="q1c-Ev-gOW" id="CMU-cj-hr9"/>
+                        <outlet property="segmentedControlIcon" destination="c99-5K-7iM" id="hUM-6T-uDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwq-G2-SR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,4 +147,9 @@
             <point key="canvasLocation" x="-116" y="-574"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon" width="35" height="35"/>
+        <image name="Icon2" width="35" height="35"/>
+        <image name="Icon3" width="35" height="35"/>
+    </resources>
 </document>

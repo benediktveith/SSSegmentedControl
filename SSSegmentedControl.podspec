@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SSSegmentedControl"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Multi Selection UISegmentedControl"
 
   s.description  = <<-DESC
@@ -9,12 +9,14 @@ Pod::Spec.new do |s|
 				   * Declare the max. number of active segments
 				   * Easy coloring of active segments
 				   * Full documented demo project and pod files
+				   * Background image support
+				   * Use of default features enabled
                    DESC
 
   s.homepage     = "https://github.com/benediktveith/SSSegmentedControl"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author    	 = "Benedikt Veith"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/benediktveith/SSSegmentedControl.git", :tag => "0.2.0" }
+  s.source       = { :git => "https://github.com/benediktveith/SSSegmentedControl.git", :tag => "0.2.1" }
   s.source_files  = "SSSegmentedController/*.{h,m}"
 end
