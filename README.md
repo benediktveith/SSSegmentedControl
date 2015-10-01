@@ -17,13 +17,14 @@ ___
 
 ___
 ### Using:
-* In `Storyboard`select a segmented control and set its custom class to `SSSegmentedControl`
+* In `Storyboard`select a segmented control and set its custom class to `SSSegmentedControl`.
 * Define the number of segments; name them; color them; etc.
-* Open the `ViewController.h` and connect an Outlet and IBAction to the `SSSegmentedControl`
+* Open the `ViewController.h` and connect an Outlet and IBAction to the `SSSegmentedControl`.
 * Open the `ViewController.m` and add in `viewDidLoad()`:
 ```
 [_segmentedControl setupSSSegmentedControlWithNumberOfSegments:'Number of Segments' withMaxActiveSegments:'Max Active Segments' andWithActiveColor:'Color'];
 ```
+* Chose max. active segments = 0, to use default segmented control features / options.
 * In the `IBAction` add:
 ```
 [_segmentedControl segmentedControlActionWithSelectedSegmentAction:@selector('Method for selected segment':) andDeselectedAction:@selector('Method for deselected segment':) andTarget:self];
